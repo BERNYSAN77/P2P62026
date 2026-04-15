@@ -7,8 +7,10 @@ public class Producto {
 
     public Producto(String nombre, double precio,int stock){
         this.nombre = nombre;
-        this.precio = precio;
-        this.stock = stock;
+        /*this.precio = precio;
+        this.stock = stock;*/
+        setPrecio(precio);
+        setStock(stock);
     }
     public Producto(){
     /*
@@ -66,10 +68,23 @@ public class Producto {
 
 
 
+
     @Override
     public String toString(){
         return "Nombre: "+nombre+"\nPrecio : $"+precio+"\nStock: "+stock;
     }
+    public void comprar (int cantidad){
+        if(cantidad > 0)
+            stock = stock + cantidad;
 
 
+    }
+    public double vender(int cantidad) {
+        if (cantidad > 0 && cantidad <= stock) {
+            stock -= cantidad;
+            return cantidad * precio;
+
+        }
+        return 0;
+    }
 }
