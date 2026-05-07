@@ -19,3 +19,4 @@ public class PruebaEmpleado {
         System.out.println("El nuevo salario anual es:" + em1.getSalario()*12);
         em2.setSalario(em2.getSalario()*1.10);
 }
+}
