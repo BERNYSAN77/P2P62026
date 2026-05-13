@@ -2,38 +2,56 @@ package examen;
 
 import java.util.Scanner;
 
-public class MainFirewall {
+public class MainLista {
     public static void main(String[] args) {
         String regla;
         int puerto, opc;
-        Firewall fi1 = null;
+        int indice=0;
+        Firewall seguridad[] = new Firewall[MAX];
         Scanner sc = new Scanner(System.in);
         do{
             menu();
             opc = Integer.parseInt(sc.nextLine());
             switch (opc){
                 case 1:{
-                    System.out.print("Ingrese el nombre de la regla: ");
-                    regla = sc.nextLine();
-                    System.out.print("Ingrese el puerto: ");
-                    puerto = Integer.parseInt(sc.nextLine());
-                    fi1 = new Firewall(regla,puerto);
+                    int cantidad;
+                    System.out.print("Cuantas reglas desea ingresar: ");
+                    cantidad = Integer.parseInt(sc.nextLine());
 
-                  //  arreglo[i] = new Firewall(regla,puerto);
-                  //  lista.add(new Firewall(regla,puerto));
+
+                        for (int i = 0; i < cantidad; i++){
+                        System.out.print("Ingrese el nombre de la regla: ");
+                        regla = sc.nextLine();
+                        System.out.print("Ingrese el puerto: ");
+                        puerto = Integer.parseInt(sc.nextLine());
+                       // seguridad[indice++] = new Firewall(regla,puerto);}
+
+
+
 
                 }break;
-                case 2:{
-                    if(fi1 != null)
-                        fi1.activar();
+               case 2:{
+                    if(indice > 0){
+                        System.out.print("Ingrese la regla a activar: ");
+                        regla = sc.nextLine();
+                        boolean encontro = false;
+                        for(int i = 0; i < indice; i++){
+                            if(seguridad[i].getRegla().equals(regla)){
+                                seguridad[i].activar();
+                                encontro = true;
+                                break;
+                            }
+                        }
+                        if(!encontro)
+                            System.out.println("No existe la regla");
+                    }
+
                     else
                         System.out.println("No existen reglas creadas");
                 }break;
                 case 3:{
                     if(fi1 != null)
                         fi1.desactivar();
-                    //    arreglo[i].desactivar();
-                    //    lista.get(i).desactivar();
                     else
                         System.out.println("No existen reglas creadas");
 
@@ -60,7 +78,7 @@ public class MainFirewall {
                 default:
                     System.out.println("Opción no válida");
             }
-        }while(opc != 6);
+        }while(opc != 6);*/
     }
     public static void menu(){
         System.out.println("********Menú********");
@@ -72,4 +90,6 @@ public class MainFirewall {
         System.out.println("6. Salir");
         System.out.print("Ingrese una opción: ");
     }
+}
+
 }

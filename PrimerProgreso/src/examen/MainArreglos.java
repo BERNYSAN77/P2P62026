@@ -11,7 +11,7 @@ public class MainArreglos {
       //  Firewall fi1 = null;
         Firewall seguridad[] = new Firewall[MAX];
         Scanner sc = new Scanner(System.in);
-        do{
+        /*do{
             menu();
             opc = Integer.parseInt(sc.nextLine());
             switch (opc){
@@ -19,15 +19,15 @@ public class MainArreglos {
                     int cantidad;
                     System.out.print("Cuantas reglas desea ingresar: ");
                     cantidad = Integer.parseInt(sc.nextLine());
-                    if(cantidad+indice <MAX){
-                        int i;
-                        for (i=indice; i<MAX; i++){
+                    if(cantidad+indice <= MAX){
+
+                        for (int i = 0; i < cantidad; i++){
                         System.out.print("Ingrese el nombre de la regla: ");
                         regla = sc.nextLine();
                         System.out.print("Ingrese el puerto: ");
                         puerto = Integer.parseInt(sc.nextLine());
-                        seguridad[i] = new Firewall(regla,puerto);}
-                        indice = i;
+                        seguridad[indice++] = new Firewall(regla,puerto);}
+
                     }else{
                         System.out.println("No existe memoria suficiente");
                     }
@@ -82,7 +82,7 @@ public class MainArreglos {
                 default:
                     System.out.println("Opción no válida");
             }
-        }while(opc != 6);
+        }while(opc != 6);*/
     }
     public static void menu(){
         System.out.println("********Menú********");

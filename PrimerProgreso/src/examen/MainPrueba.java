@@ -11,7 +11,7 @@ public class MainPrueba {
         final int MAX =3;
         Firewall seguridad[] = new Firewall[MAX];
         Scanner sc = new Scanner(System.in);
-        //1 llenar todo el arreglo y mostrar
+        //llenar todo el arreglo y mostrar
 
         for(int i = 0; i < seguridad.length; i++){
             System.out.print("Ingrese el nombre de la regla: ");
