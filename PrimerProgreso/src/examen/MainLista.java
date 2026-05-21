@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class MainLista {
     public static void main(String[] args) {
-        String regla;
+      /*  String regla;
         int puerto, opc;
         int indice=0;
         Firewall seguridad[] = new Firewall[MAX];
@@ -92,4 +92,4 @@ public class MainLista {
     }
 }
 
-}
+
