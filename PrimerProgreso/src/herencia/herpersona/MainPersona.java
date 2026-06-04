@@ -33,9 +33,15 @@ public class MainPersona {
                         System.out.println(p);
                     }
                 }break;
+                case 5:{
+                    for(int i = 0; i < listado.size(); i++){
+                        if(listado.get(i) instanceof AlumnoPregrado)
+                            System.out.println(listado.get(i));
+                    }
+                }
             }
 
-        }while(opc != 7);
+        }while(opc != 9);
 
 
     }
@@ -47,8 +53,8 @@ public class MainPersona {
         System.out.println("4. Imprimir todos");
         System.out.println("5. Imprimir alumnos pregrado");
         System.out.println("6. Imprimir alumnos magister");
-        System.out.println("5. Imprimir profesores hora");
-        System.out.println("6. Pagar nómina profesores");
-        System.out.println("7. Salir");
+        System.out.println("7. Imprimir profesores hora");
+        System.out.println("8. Pagar nómina profesores");
+        System.out.println("9. Salir");
     }
 }
