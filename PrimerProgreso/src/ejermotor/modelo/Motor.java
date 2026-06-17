@@ -6,13 +6,14 @@ public class Motor {
 
    // encender(), apagar(), ajustarVelocidad(int nuevaVelocidad) y     mostrarEstado()
 
-    public void encender(){
-        if(estado){
-            System.out.println("El motor ya se encuentra encendido. ");
-        }else{
+    public void encender() throws Exception{
+        if(!estado){
             estado = true;
-            System.out.println("El motor a sido encendido");
+            throw new Exception("El motor a sido encendido");
         }
+
+        throw new Exception("El motor ya se encuentra encendido. ");
+
     }
     public void apagar(){
         if(estado){
